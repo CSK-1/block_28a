@@ -9,7 +9,6 @@ import FavoritesList from "./FavoritesList";
 function App() {
 	const [recipes, setRecipes] = useState([]);
 	const [token, setToken] = useState();
-	const [favRecipes, setFavRecipes] = useState([]);
 
 	useEffect(() => {
 		const getRecipes = async () => {
@@ -46,7 +45,7 @@ function App() {
 				/>
 				<Route path="/login" element={<LogIn setToken={setToken} />} />
 				<Route path="/register" element={<Register setToken={setToken} />} />
-        		<Route path="/favorites" element={<FavoritesList setFavRecipes={setFavRecipes} favRecipes={favRecipes} />} />
+        		<Route path="/favorites" element={<FavoritesList token={token} />} />
 			</Routes>
 		</>
 	);
