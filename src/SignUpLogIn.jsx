@@ -22,7 +22,6 @@ function SignUpLogIn ({setToken, endpoint}) {
                 }
             )
             const result = await response.json()
-            console.log(result)
             setToken(result.token)
             navigate("/")
         }catch(error){
