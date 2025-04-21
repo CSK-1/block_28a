@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function FavoritesList({token}){
 	const [favRecipes, setFavRecipes] = useState([]);
@@ -27,6 +28,7 @@ function FavoritesList({token}){
                 <div key={recipe.idMeal}>
                     <img src={recipe?.strMealThumb} style={{ height: "400px" }} />
                     <h2>{recipe.strMeal}</h2>
+                    <Link to={`/recipe/${recipe.idMeal}`}>Get Details</Link>
                 </div>
             ))}
         </>
